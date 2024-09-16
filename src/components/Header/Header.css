@@ -1,0 +1,22 @@
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+nav {
+    display: flex;
+}
+
+header a {
+   padding: 2em 4em;
+}
+
+.site-logo {
+    /* margin-left: 1.5em; */
+    text-transform: uppercase;
+    font-weight: 900;
+    
+}
