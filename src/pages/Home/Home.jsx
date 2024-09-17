@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <div className="home-container">
+            
             <h3>Browse the Range</h3>
             <p>Lorem ipsul aknsknia sjaiks skani</p>
             <div className="categories">
@@ -36,6 +37,7 @@ export default function Home() {
                     <div className="details">
                         <h4>Product 2</h4>
                         <p>price $</p>
+                        <p>AAA</p>
                     </div>
                 </div>
                 <div className="product">

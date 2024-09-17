@@ -2,18 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    border: 1px solid black;
+    width: 95%;
+  
     margin: 0 auto;
     margin-bottom: 3em;
     
 }
 h3 {
-    margin-top: 1.5em;
+    margin-top: 1.6em;
 }
 .categories {
     display: flex;
-    border: 1px solid black;
     width: 100%;
     justify-content: space-around;
 }
@@ -51,12 +50,36 @@ h3 {
     flex-direction: column;
     align-items: start;
     width: 100%;
+    gap: 10px;
     text-indent: 2em;
+   padding: 1em;
+}
+.details h4, .details p {
+    margin: 0; /* Removes default margin that might cause spacing issues */
 }
 
 .btn {
     margin-top: 2.5em;
+    margin-bottom: 2.5em;
     border: 1px solid #B88E2F;
     color: #B88E2F;
     padding: 0.5em 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        width: 90%;
+    }
+    .category {
+        width: 100%;
+    }
+    .products {
+        flex-direction: column;
+        width: 90%;
+    }
+    .product {
+        width: 100%;
+    }
+    
 }
