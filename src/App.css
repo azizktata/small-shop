@@ -7,3 +7,12 @@ a {
   text-decoration: unset;
   color: unset;
 }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+}

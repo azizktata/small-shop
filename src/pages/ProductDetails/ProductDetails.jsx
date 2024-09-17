@@ -8,14 +8,16 @@ export default function ProductDetails() {
   const { productId } = useParams();
   console.log(productId);
   return (
-    <div className="details-container">
+    <div className="product-details-container">
       <Link to="/products">Back to shop</Link>
       <h3>Product Details</h3>
-      <div className="product-details-container">
+      <div className="product-container">
         <img src="https://via.placeholder.com/150" alt="product" />
-        <div className="right-container">
-          <nav>
-            <Link to=".">Details</Link>
+        <div className="details-container">
+          <nav className="details-nav">
+            <Link className="isActive" to=".">
+              Details
+            </Link>
             <Link to="order">Order</Link>
           </nav>
           <div className="product-details">
