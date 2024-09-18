@@ -2,7 +2,6 @@ import React from "react";
 import "./ProductDetails.css";
 import { Link, Outlet, useParams } from "react-router-dom";
 import { productss } from "../Products/Products";
-import ProductInfo from "./ProductInfo";
 
 export default function ProductDetails() {
   const { productId } = useParams();

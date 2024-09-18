@@ -10,25 +10,25 @@ export default function Cart() {
       <div className="cart-main-container">
         <div className="cart-list-container">
           <div className="cart-element container-flex">
-            <div>
+            <div className="cart-element-main">
               <img src={image} alt="product" />
-            </div>
-            <div className="details">
-              <h4>Product 1</h4>
-              <p>Price: $100</p>
-              <p>Quantity: 1</p>
+              <div className="details">
+                <h4>Al Kamis Al dhahabi</h4>
+                <p>Price: $100</p>
+                <p>Quantity: 1</p>
+              </div>
             </div>
             <button className="remove-btn">+</button>
           </div>
 
           <div className="cart-element container-flex">
-            <div>
+            <div className="cart-element-main">
               <img src={image} alt="product" />
-            </div>
-            <div className="details">
-              <h4>Product 1</h4>
-              <p>Price: $100</p>
-              <p>Quantity: 1</p>
+              <div className="details">
+                <h4>Al Kamis Al dhahabi</h4>
+                <p>Price: $100</p>
+                <p>Quantity: 1</p>
+              </div>
             </div>
             <button className="remove-btn">+</button>
           </div>
