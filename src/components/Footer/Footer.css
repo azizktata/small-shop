@@ -1,4 +1,4 @@
-footer {
+/* footer {
     background-color: #161616;
     color: #aaaaaa;
     height: 74px;
@@ -9,4 +9,12 @@ footer {
     margin-top: auto;
     font-weight: 500;
     
+} */
+
+footer {
+  background: #345480;
+  color: rgba(255, 255, 255, 0.9);
+
+  text-align: center;
+  padding: 3em 0;
 }
