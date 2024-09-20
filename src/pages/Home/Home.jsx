@@ -11,32 +11,58 @@ export default function Home() {
         <p>Lorem ipsul aknsknia sjaiks skani</p>
         <div className="categories">
           <div className="category">
-            <img src="https://via.placeholder.com/150" alt="category" />
-            <h4>Category 1</h4>
+            {/* <img src="https://via.placeholder.com/150" alt="category" /> */}
+            <div className="category-content">
+              <p>must have</p>
+              <h4>Category 1</h4>
+              <button className="shop-btn">Shop now</button>
+            </div>
           </div>
           <div className="category">
-            <img src="https://via.placeholder.com/150" alt="category" />
-            <h4>Category 2</h4>
+            {/* <img src="https://via.placeholder.com/150" alt="category" /> */}
+            <div className="category-content">
+              <p>must have</p>
+              <h4>Category 1</h4>
+              <button className="shop-btn">Shop now</button>
+            </div>
           </div>
           <div className="category">
-            <img src="https://via.placeholder.com/150" alt="category" />
-            <h4>Category 3</h4>
+            {/* <img src="https://via.placeholder.com/150" alt="category" /> */}
+            <div className="category-content">
+              <p>must have</p>
+              <h4>Category 1</h4>
+              <button className="shop-btn">Shop now</button>
+            </div>
           </div>
         </div>
 
         <h3>Our Products</h3>
         <div className="products">
           <div className="product">
-            <img src={image} />
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+              <button className="add-cart-btn">View details</button>
+            </div>
+            {/* <img src={image} /> */}
           </div>
           <div className="product">
-            <img src="https://via.placeholder.com/150" />
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+              <button className="add-cart-btn">View details</button>
+            </div>
           </div>
           <div className="product">
-            <img src="https://via.placeholder.com/150" />
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+              <button className="add-cart-btn">View details</button>
+            </div>
           </div>
           <div className="product">
-            <img src="https://via.placeholder.com/150" />
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+              <button className="add-cart-btn">View details</button>
+            </div>
+            {/* <img src="https://via.placeholder.com/150" /> */}
           </div>
           {/* <div className="product">
             <img src="https://via.placeholder.com/150" />
@@ -46,7 +72,9 @@ export default function Home() {
             </div>
           </div> */}
         </div>
-        <Link className="show-btn">Show More</Link>
+        <button className="show-btn">
+          <Link to="products">Show More</Link>
+        </button>
       </div>
     </div>
   );

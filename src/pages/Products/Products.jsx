@@ -5,12 +5,22 @@ import image from "../../assets/food.jpg";
 
 export default function Product() {
   const productElements = productss.map((product) => (
-    <div className="product-element">
+    <div key={product.id} className="product-element">
       <Link to={`${product.id}`}>
-        <img src={image} />
-        <div className="info-details">
-          <h4>{product.name}</h4>
-          <p>/{product.price}$</p>
+        <div className="card-img-sector">
+          <div className="card-img-container">
+            <img className="card-img" src={image} />
+            <button className="add-cart-btn">Add to cart</button>
+          </div>
+        </div>
+        <div className="card-content">
+          <p className="card-body-categ">{product.category}</p>
+          <h2 className="card-title">{product.name}</h2>
+          <p className="card-body-price">{product.price}$</p>
+          {/* <div className="card-footer">
+            <button className="add-cart-btn">Add to cart</button>
+            <button className="view-details-btn">view details</button>
+          </div> */}
         </div>
       </Link>
     </div>
@@ -18,11 +28,28 @@ export default function Product() {
 
   return (
     <div className="products-container">
-      <h3>Explore our products options</h3>
-      <div className="category-buttons">
-        <button className="filter-btn">category 1</button>
-        <button className="filter-btn">category 2</button>
-        <button className="filter-btn">category 3</button>
+      <h3>Explore our products</h3>
+      <div className="filter-container">
+        <div className="category-buttons">
+          <button className="category-btn">category 1</button>
+          <button className="category-btn">category 2</button>
+          <button className="category-btn">category 3</button>
+        </div>
+
+        <div className="filter-options">
+          <select className="filter-select">
+            <option value="price">Price</option>
+            <option value="name">Name</option>
+            <option value="category">Alphabetically</option>
+          </select>
+          <select className="filter-select">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+          <p>
+            <strong>{productss.length} Prodcuts</strong>
+          </p>
+        </div>
       </div>
       <div className="product-list">{productElements}</div>
     </div>
@@ -32,13 +59,13 @@ export default function Product() {
 export const productss = [
   {
     id: 1,
-    name: "Product 1",
+    name: "Armchair Morgen",
     category: "category 1",
     price: 100,
   },
   {
     id: 2,
-    name: "Product 2",
+    name: "Bright bowl",
     category: "category 2",
     price: 200,
   },
