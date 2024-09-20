@@ -2,8 +2,13 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import image from "../../assets/food.jpg";
+import { productss } from "../Products/Products";
+import ProductCard from "../Products/ProductCard";
 
 export default function Home() {
+  const productElements = productss
+    .filter((p) => p.id < 5)
+    .map((product) => <ProductCard key={product.id} product={product} />);
   return (
     <div className="home-container">
       <div className="home-main">
@@ -38,40 +43,30 @@ export default function Home() {
 
         <h3>Our Products</h3>
         <div className="products">
-          <div className="product">
-            <div className="visible">
-              <button className="add-cart-btn">Add cart</button>
-              <button className="add-cart-btn">View details</button>
-            </div>
-            {/* <img src={image} /> */}
-          </div>
-          <div className="product">
-            <div className="visible">
-              <button className="add-cart-btn">Add cart</button>
-              <button className="add-cart-btn">View details</button>
-            </div>
-          </div>
-          <div className="product">
-            <div className="visible">
-              <button className="add-cart-btn">Add cart</button>
-              <button className="add-cart-btn">View details</button>
-            </div>
-          </div>
-          <div className="product">
-            <div className="visible">
-              <button className="add-cart-btn">Add cart</button>
-              <button className="add-cart-btn">View details</button>
-            </div>
-            {/* <img src="https://via.placeholder.com/150" /> */}
-          </div>
+          {productElements}
           {/* <div className="product">
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+            </div>
+          </div>
+          <div className="product">
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+            </div>
+          </div>
+          <div className="product">
+            <div className="visible">
+              <button className="add-cart-btn">Add cart</button>
+            </div> */}
+          {/* <img src="https://via.placeholder.com/150" /> */}
+        </div>
+        {/* <div className="product">
             <img src="https://via.placeholder.com/150" />
             <div className="details">
               <h4>Product 4</h4>
               <p>price $</p>
             </div>
           </div> */}
-        </div>
         <button className="show-btn">
           <Link to="products">Show More</Link>
         </button>

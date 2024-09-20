@@ -1,40 +1,23 @@
 import React from "react";
 import "./Product.css";
-import { Link } from "react-router-dom";
+
 import image from "../../assets/food.jpg";
+import ProductCard from "./ProductCard";
 
 export default function Product() {
   const productElements = productss.map((product) => (
-    <div key={product.id} className="product-element">
-      <Link to={`${product.id}`}>
-        <div className="card-img-sector">
-          <div className="card-img-container">
-            <img className="card-img" src={image} />
-            <button className="add-cart-btn">Add to cart</button>
-          </div>
-        </div>
-        <div className="card-content">
-          <p className="card-body-categ">{product.category}</p>
-          <h2 className="card-title">{product.name}</h2>
-          <p className="card-body-price">{product.price}$</p>
-          {/* <div className="card-footer">
-            <button className="add-cart-btn">Add to cart</button>
-            <button className="view-details-btn">view details</button>
-          </div> */}
-        </div>
-      </Link>
-    </div>
+    <ProductCard key={product.id} product={product} />
   ));
 
   return (
     <div className="products-container">
       <h3>Explore our products</h3>
       <div className="filter-container">
-        <div className="category-buttons">
+        {/* <div className="category-buttons">
           <button className="category-btn">category 1</button>
           <button className="category-btn">category 2</button>
           <button className="category-btn">category 3</button>
-        </div>
+        </div> */}
 
         <div className="filter-options">
           <select className="filter-select">
@@ -46,10 +29,10 @@ export default function Product() {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-          <p>
-            <strong>{productss.length} Prodcuts</strong>
-          </p>
         </div>
+        <p>
+          <strong>{productss.length} Prodcuts</strong>
+        </p>
       </div>
       <div className="product-list">{productElements}</div>
     </div>
@@ -86,5 +69,11 @@ export const productss = [
     name: "Product 3",
     category: "category 3",
     price: 300,
+  },
+  {
+    id: 6,
+    name: "Product 6",
+    category: "category 3",
+    price: 600,
   },
 ];
