@@ -9,10 +9,10 @@ export default function Header() {
         <div className="site-title">
           <h1>
             <Link className="site-logo " to="/">
-              #Shopize
+              #SOKOON
             </Link>
           </h1>
-          <p className="subtitle">aqss wqqc qzze</p>
+          <p className="subtitle">hand-made wood crafts</p>
         </div>
         <nav>
           <ul>

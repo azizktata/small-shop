@@ -214,12 +214,20 @@
 .collection-category {
   min-height: 50vh;
   background-image: url("../../assets/kitchen-collection.jpg");
+  background-color: rgba(83, 82, 82, 0.2);
+  background-blend-mode: soft-light;
+  /* background-position: right; */
+  background-position: center;
+  background-size: 150%;
   /* background-position: right center; */
 }
 .category-elements {
   display: flex;
   gap: 1em;
   margin-top: 1em;
+}
+.category-elements .el {
+  width: 48%;
 }
 .add-cart-btn {
   margin-right: 1em;
@@ -235,16 +243,15 @@
   letter-spacing: 1px;
   cursor: pointer;
   transform: scale(1);
-  transition: all 0.4s;
+  transition: transform 0.4s;
 }
 
 .add-cart-btn:hover,
 .add-cart-btn:focus {
-  background: linear-gradient(to right, #143774, #245fc6);
-  color: #fff;
+  background: #d2d2d2;
+  /* color: #fff; */
   transform: scale(1.1);
 }
-
 .show-btn {
   display: inline-block;
   font-family: "Lora", sans-serif;
@@ -321,6 +328,7 @@
     grid-column: 3 / -1;
     margin-left: 1em;
     margin-top: 0;
+    /* align-items: stretch; */
     /* flex-direction: column; */
     /* height: 100%; */
     /* justify-self: center; */

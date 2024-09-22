@@ -103,8 +103,12 @@ export default function Home() {
           </div>
         </div>
         <div className="category-elements">
-          <ProductCard product={productss[0]} newImage={kitchen1} />
-          <ProductCard product={productss[1]} newImage={kitchen2} />
+          <div className="el">
+            <ProductCard product={productss[0]} newImage={kitchen1} />
+          </div>
+          <div className="el">
+            <ProductCard product={productss[1]} newImage={kitchen2} />
+          </div>
         </div>
       </div>
       <div className="products">

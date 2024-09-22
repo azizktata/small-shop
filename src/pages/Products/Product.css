@@ -57,13 +57,6 @@ h4 {
   margin: 0;
 }
 
-.products-container h3 {
-  color: #143774;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 /* .product-element p,
 h4,
 h2 {
@@ -103,7 +96,9 @@ h2 {
 }
 .card-img {
   transition: filter 0.3s ease;
-  min-height: 250px;
+  min-height: 300px;
+  max-height: 300px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -170,26 +165,6 @@ h2 {
 
 .card-content {
   align-items: flex-start;
-}
-
-.card-footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 2em;
-}
-.card-footer button {
-  display: inline-block;
-  padding: 0.75em 2em;
-  border: 0;
-  border-radius: 3px;
-  background: #143774;
-  color: white;
-  cursor: pointer;
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .category-buttons {

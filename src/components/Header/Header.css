@@ -34,20 +34,21 @@ header {
 
   background: #f8f8f8;
   padding: 2em 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Jast", sans-serif;
   /* border: 1px solid #707070; */
 }
 h1 {
   margin: 0;
   font-family: "Lora", serif;
-  color: #143774;
+  color: black;
+  opacity: 0.8;
   font-size: 2rem;
 }
 .subtitle {
   margin: 0;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #1792d2;
+  color: rgba(197, 183, 103, 0.8);
   text-transform: uppercase;
 }
 nav ul {
@@ -73,7 +74,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  color: #1792d2;
+  color: rgba(197, 183, 103, 0.8);
 }
 
 .isActive {

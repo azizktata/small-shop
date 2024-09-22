@@ -6,7 +6,8 @@ export default function ProductInfo() {
   const { product, count, setCount } = useOutletContext();
   return (
     <div>
-      <h3>{product.name}</h3>
+      <h3 className="product-info-title">{product.name}</h3>
+      <p className="product-info-price">${product.price}.00</p>
       <p>
         <strong> Description: </strong>Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Nullam suscipit, nisl sit amet rhoncus aliquam, elit

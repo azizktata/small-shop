@@ -1,8 +1,8 @@
 import React from "react";
 import "./ProductDetails.css";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 import { productss } from "../Products/Products";
-import image from "../../assets/food.jpg";
+import image from "../../assets/chair2.jpg";
 
 export default function ProductDetails() {
   const [count, setCount] = React.useState(0);
@@ -11,16 +11,27 @@ export default function ProductDetails() {
 
   return (
     <div className="product-details-container">
-      <Link to="/products">Back to shop</Link>
-      <h3>Product Details</h3>
+      <Link className="back-link" to="/products">
+        back to shop
+      </Link>
+
       <div className="product-container">
         <img src={image} alt="product" />
         <div className="details-container">
           <nav className="details-nav">
-            <Link className="isActive" to=".">
+            <NavLink
+              className={({ isActive }) => (isActive ? "isActive" : null)}
+              to="."
+              end
+            >
               Details
-            </Link>
-            <Link to="order">Order</Link>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "isActive" : null)}
+              to="order"
+            >
+              Order
+            </NavLink>
           </nav>
           <div className="product-details">
             <Outlet context={{ product, count, setCount }} />

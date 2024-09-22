@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
-import image from "../../assets/food.jpg";
+import image from "../../assets/chair2.jpg";
 export default function ProductCard({ product, newImage }) {
   return (
     <div key={product.id} className="product-element">

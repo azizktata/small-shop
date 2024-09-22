@@ -40,16 +40,12 @@
   margin-bottom: 2em;
 }
 .details h4 {
-  font-family: "Lora", sans-serif;
-  color: #143774;
   font-size: 1.5rem;
   padding: 0;
   margin-bottom: 0.5em;
   text-indent: 0;
 }
 .details p {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
   color: #707070;
   font-size: 1.125rem;
   text-indent: 0;
@@ -58,11 +54,20 @@
 .cart-container {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .cart-list-container {
   margin-bottom: 2em;
   width: 100%;
+}
+
+.cart-element:last-child {
+  border-bottom: 0;
+}
+
+.cart-main-container {
+  align-items: start;
 }
 
 .cart-element {
@@ -95,6 +100,8 @@
 .cart-total {
   display: flex;
   flex-direction: column;
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .remove {
   font-size: small;
@@ -120,7 +127,7 @@
   font-weight: 500;
 }
 .cart-element img {
-  height: 150px;
+  height: 100px;
   object-fit: cover;
   max-width: 210px;
 }

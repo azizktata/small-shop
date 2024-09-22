@@ -1,8 +1,9 @@
 import React from "react";
 import "./ProductDetails.css";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function ProductOrder() {
+  const { product, count, setCount } = useOutletContext();
   return (
     <div className="order-container">
       <h3>Order</h3>
@@ -25,7 +26,12 @@ export default function ProductOrder() {
             <input type="number" id="quantity" />
           </div>
         </div>
-        <Link className="order2-btn">Order</Link>
+        <div className="counter">
+          <button onClick={() => setCount(count - 1)}>-</button>
+          <span>{count}</span>
+          <button onClick={() => setCount(count + 1)}>+</button>
+        </div>
+        <Link className="btn order2-btn">Order</Link>
       </form>
     </div>
   );

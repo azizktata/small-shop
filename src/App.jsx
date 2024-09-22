@@ -11,12 +11,14 @@ import Cart from "./pages/Cart/Cart";
 import ProductInfo from "./pages/ProductDetails/ProductInfo";
 import ProductOrder from "./pages/ProductDetails/ProductOrder";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Login/Register";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Product />} />
