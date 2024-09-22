@@ -51,7 +51,6 @@ h4 {
 } */
 
 .product-element h2 {
-  font-family: "Ubuntu", sans-serif;
   font-size: 1.25rem;
   color: black;
   opacity: 0.8;
@@ -59,8 +58,6 @@ h4 {
 }
 
 .products-container h3 {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 1.5rem;
   color: #143774;
   margin-bottom: 1em;
   text-transform: uppercase;
@@ -106,6 +103,8 @@ h2 {
 }
 .card-img {
   transition: filter 0.3s ease;
+  min-height: 250px;
+  object-fit: cover;
 }
 
 /* with Flexbox */
@@ -242,7 +241,7 @@ h2 {
 @media screen and (min-width: 768px) {
   .product-list {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1em;
     /* flex-direction: row;
     flex-wrap: wrap;
@@ -253,9 +252,5 @@ h2 {
   }
   .product-element {
     /* width: 48%; */
-  }
-  .products {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
   }
 }
