@@ -25,7 +25,7 @@ export default function Checkout() {
           <input placeholder="Region" type="text" className="region" />
           <input placeholder="City" type="text" className="address" />
           <input placeholder="Your Address" type="text" className="address" />
-          <button className="order-checkout-btn" to=".">
+          <button className="btn order-checkout-btn" to=".">
             Complete Order
           </button>
         </form>
@@ -38,27 +38,33 @@ export default function Checkout() {
             cartItems.map((product) => (
               <div className="order-pricing container-flex">
                 <p>{product.name}</p>
-                <p>{product.price}$</p>
+                <p>
+                  {product.price}${" "}
+                  <span className="dt"> x {product.quantity}</span>
+                </p>
               </div>
             ))}
 
           <div className="order-pricing container-flex">
-            <p>Subtotal ({cartItems.length} items) </p>
+            <p className="light">Subtotal ({cartItems.length} items) </p>
             <p>
               {totalPrice} <span className="dt"> DT</span>
             </p>
           </div>
 
           <div className="order-pricing container-flex">
-            <p>Shipping</p>
+            <p className="light">Shipping</p>
             <p>
-              7 <span className="dt">DT</span>
+              0 <span className="dt">DT</span>
             </p>
           </div>
           <div className="order-pricing container-flex">
-            <p>Total </p>
             <p>
-              {totalPrice}
+              {" "}
+              <strong>Total </strong>{" "}
+            </p>
+            <p>
+              <strong> {totalPrice}</strong>
               <span className="dt"> DT</span>
             </p>
           </div>

@@ -36,8 +36,10 @@ export default function ProductCard({ product, newImage }) {
           </button>
         </div>
         <div className="card-content">
-          <p className="card-body-categ">{product.category}</p>
-          <h2 className="card-title">{product.name}</h2>
+          <div className="card-content-header">
+            <h2 className="card-title">{product.name}</h2>
+            <p className="card-body-categ">{product.category}</p>
+          </div>
           <p className="card-body-price">{product.price}$</p>
           {/* <div className="card-footer">
             <button className="add-cart-btn">Add to cart</button>

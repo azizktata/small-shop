@@ -56,6 +56,11 @@
   font-weight: 600;
   font-size: 0.75em;
 }
+.light {
+  color: #505050;
+  font-weight: 500;
+  font-size: 0.75em;
+}
 
 @media screen and (min-width: 768px) {
   .checkout-form-container {

@@ -119,7 +119,9 @@ nav a:focus {
     margin: 0 !important;
     padding: 0 1.25em;
   }
-  .sidebar {
-    width: 50%;
+
+  .bg-counter {
+    top: -7px;
+    left: 36px;
   }
 }

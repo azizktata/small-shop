@@ -21,13 +21,10 @@ export default function Product() {
 
         <div className="filter-options">
           <select className="filter-select">
-            <option value="price">Price</option>
+            <option value="price">Price, Low to High</option>
+            <option value="price">Price, High to Low</option>
             <option value="name">Name</option>
             <option value="category">Alphabetically</option>
-          </select>
-          <select className="filter-select">
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
           </select>
         </div>
         <p>

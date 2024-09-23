@@ -9,29 +9,16 @@ export default function ProductOrder() {
       <h3>Order</h3>
       <form className="order-form" action="">
         <div className="order-form-main">
-          <div className="input-grp">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" />
-          </div>
-          <div className="input-grp">
-            <label htmlFor="address">Address</label>
-            <input type="text" id="address" />
-          </div>
-          <div className="input-grp">
-            <label htmlFor="phone">Phone</label>
-            <input type="number" id="phone" />
-          </div>
-          <div className="input-grp">
-            <label htmlFor="quantity">Quantity</label>
-            <input type="number" id="quantity" />
-          </div>
+          <input placeholder="Your Firstname" type="text" className="name" />
+          <input placeholder="Your Lastname" type="text" className="name" />
+          <input placeholder="Phone number" type="number" className="phone" />
+          <input placeholder="Region" type="text" className="region" />
+          <input placeholder="City" type="text" className="address" />
+          <input placeholder="Your Address" type="text" className="address" />
+          <button className=" btn order-checkout-btn" to=".">
+            Purchase
+          </button>
         </div>
-        <div className="counter">
-          <button onClick={() => setCount(count - 1)}>-</button>
-          <span>{count}</span>
-          <button onClick={() => setCount(count + 1)}>+</button>
-        </div>
-        <Link className="btn order2-btn">Order</Link>
       </form>
     </div>
   );
