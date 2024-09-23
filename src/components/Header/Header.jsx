@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
 import { CartContext } from "../HomeLayout";
+import image from "../../assets/chair2.jpg";
 
 export default function Header() {
   const { cartItems } = React.useContext(CartContext);
@@ -31,10 +32,19 @@ export default function Header() {
             <li>
               <NavLink to="login">Login</NavLink>
             </li>
-            <li className="cart-icon">
-              <NavLink to="cart">
-                <i className="fa-solid fa-cart-shopping"></i>
-              </NavLink>
+            <li
+              onClick={() => {
+                document
+                  .querySelector(".sidebar")
+                  .classList.remove("hide-sidebar");
+                document
+                  .querySelector(".sidebar")
+                  .classList.add("show-sidebar");
+              }}
+              className="cart-icon"
+            >
+              <i className="fa-solid fa-cart-shopping"></i>
+
               <div className="bg-counter">
                 <span>{numberOfCartItems}</span>
               </div>

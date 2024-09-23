@@ -10,7 +10,7 @@ export default function ProductCard({ product, newImage }) {
     <div key={product.id} className="product-element">
       <div>
         <div className="card-img-sector">
-          <Link to={`${product.id}`}>
+          <Link to={`/products/${product.id}`}>
             <img className="card-img" src={newImage ? newImage : image} />
           </Link>
           <button

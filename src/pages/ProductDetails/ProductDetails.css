@@ -67,7 +67,7 @@ p, h4 {
 .product-container img {
   object-fit: cover;
   max-height: 70vh;
-  max-width: 90%;
+  max-width: 100%;
 }
 .details-container {
   margin: 2em 0;
@@ -114,7 +114,7 @@ p, h4 {
 }
 .counter button {
   display: inline-block;
-  padding: 0.5em 0.75em;
+  padding: 0.75em 0.75em;
   font-size: 1em;
   border: 0;
   background: transparent;
@@ -145,6 +145,15 @@ p, h4 {
   display: flex;
   flex-direction: column;
 }
+.order-form input {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.order-form input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
 .order2-btn {
   padding: 0.75em 2.5em;
   background-color: #16db99;
@@ -160,26 +169,19 @@ p, h4 {
   transform: translate(1px, 1px);
   color: #fff;
 }
-.add-to-cart-btn {
-  margin-right: 1em;
-
-  display: inline-block;
-  padding: 1em 1.5em;
-  border: 0;
+.add-cart {
+  padding: 1em 2.75em;
   border-radius: 3px;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 0.75rem;
   text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
   cursor: pointer;
   transform: scale(1);
-  transition: all 0.4s;
+  transition: transform 0.4s;
 }
-.add-to-cart-btn:hover,
-.add-to-cart-btn:focus {
-  background: linear-gradient(to right, #143774, #245fc6);
-  color: #fff;
+.add-cart:hover,
+.add-cart:focus {
+  /* background: linear-gradient(to right, #143774, #245fc6);
+  color: #fff; */
+  background-color: #d4d4d4;
   transform: scale(1.1);
 }
 
@@ -199,20 +201,29 @@ p, h4 {
   .input-grp {
     width: 48%;
   }
-  /* .add-cart-section {
-    justify-content: space-between;
-  } */
   .add-cart-section {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    width: 100%;
+    align-items: stretch;
+  }
+  .counter {
+    width: 100%;
+    /* max-width: 100%; */
+  }
+
+  /* .add-cart-section {
     justify-content: flex-start;
   }
   .add-cart-section .add-to-cart-btn {
     width: 100%;
     margin-left: 1.75em;
-  }
-  .counter {
-    width: 40%;
-  }
-  .counter button {
-    /* width: 20%; */
+  } */
+}
+@media screen and (min-width: 1000px) {
+  .add-cart-section {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

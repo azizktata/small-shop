@@ -1,0 +1,105 @@
+.checkout-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+.checkout-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.checkout-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 1;
+}
+.checkout-form-container input {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.checkout-form-container input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+.order-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.cart-order-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  margin-bottom: 2em;
+  border-radius: 3px;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.order-checkout-btn {
+  padding: 0.75em 2em;
+  font-size: 1.125em;
+  border: 0;
+  background-color: #333;
+  margin-top: 1em;
+  color: white;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+.order-checkout-btn:focus,
+.order-checkout-btn:hover {
+  background-color: black;
+}
+.dt {
+  color: #ccc;
+  font-weight: 600;
+  font-size: 0.75em;
+}
+
+@media screen and (min-width: 768px) {
+  .checkout-form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .order-checkout-btn {
+    grid-column: 1 / -1;
+  }
+}
+@media screen and (min-width: 900px) {
+  .checkout-main {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 100%;
+    height: 100vh;
+    border-top: 1px solid #ccc;
+  }
+  .checkout-title {
+    margin-top: 0;
+    margin-top: 1em;
+  }
+  .checkout-container {
+    width: 50%;
+  }
+  .checkout-form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .order-checkout-btn {
+    grid-column: 1 / -1;
+  }
+  .cart-total {
+    width: 40%;
+    height: 100vh;
+    border-left: 1px solid #ccc;
+  }
+  .cart-order-container {
+    width: 100%;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    padding-right: 3em;
+    padding-left: 3em;
+    height: 100%;
+  }
+}

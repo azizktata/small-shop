@@ -28,7 +28,7 @@ export default function ProductInfo() {
           <span>{count}</span>
           <button onClick={() => setCount(count + 1)}>+</button>
         </div>
-        <button className="add-to-cart-btn">Add to cart</button>
+        <button className="btn add-cart">Add to cart</button>
       </div>
     </div>
   );

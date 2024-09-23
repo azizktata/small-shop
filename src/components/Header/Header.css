@@ -21,6 +21,7 @@ header a {
 }
 
 */
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -74,6 +75,7 @@ nav a {
 
 .cart-icon {
   position: relative;
+  cursor: pointer;
 }
 
 .bg-counter {
@@ -116,5 +118,8 @@ nav a:focus {
   nav li {
     margin: 0 !important;
     padding: 0 1.25em;
+  }
+  .sidebar {
+    width: 50%;
   }
 }
