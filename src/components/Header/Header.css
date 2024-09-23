@@ -31,19 +31,19 @@ header a {
 }
 header {
   text-align: center;
-
+  margin: 0;
   background: #f8f8f8;
   padding: 2em 0;
   font-family: "Jast", sans-serif;
   /* border: 1px solid #707070; */
 }
-h1 {
+
+header h1 {
   margin: 0;
-  font-family: "Lora", serif;
-  color: black;
-  opacity: 0.8;
   font-size: 2rem;
+  color: black;
 }
+
 .subtitle {
   margin: 0;
   font-size: 0.75rem;
@@ -59,17 +59,39 @@ nav ul {
 }
 
 nav li {
-  margin-left: 2em;
+  padding: 0.5em 0.75em;
 }
 
 nav a {
   color: #707070;
-  padding: 0 !important;
-  margin: 0;
+
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.bg-counter {
+  display: block;
+  font-size: 13px;
+  height: 16px;
+  width: 16px;
+  background: rgb(134, 134, 134);
+  top: 5px;
+  position: absolute;
+  left: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
+.bg-counter span {
+  color: white;
+  line-height: 1rem;
+  display: block;
 }
 
 nav a:hover,

@@ -1,31 +1,43 @@
 import React from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
+import { CartContext } from "../HomeLayout";
 
 export default function Header() {
+  const { cartItems } = React.useContext(CartContext);
+
+  const numberOfCartItems = cartItems.length > 0 ? cartItems.length : 0;
   return (
     <header>
       <div className="container">
         <div className="site-title">
           <h1>
-            <Link className="site-logo " to="/">
+            <NavLink className="site-logo" to="/">
               #SOKOON
-            </Link>
+            </NavLink>
           </h1>
           <p className="subtitle">hand-made wood crafts</p>
         </div>
         <nav>
           <ul>
             <li>
-              <Link className="" to="products">
+              <NavLink
+                className={({ isActive }) => (isActive ? "isActive" : null)}
+                to="products"
+              >
                 Shop
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="cart">Cart</Link>
+              <NavLink to="login">Login</NavLink>
             </li>
-            <li>
-              <Link to="login">Login</Link>
+            <li className="cart-icon">
+              <NavLink to="cart">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </NavLink>
+              <div className="bg-counter">
+                <span>{numberOfCartItems}</span>
+              </div>
             </li>
           </ul>
         </nav>

@@ -2,13 +2,38 @@ import React from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
 import image from "../../assets/chair2.jpg";
+import { CartContext } from "../../components/HomeLayout";
+
 export default function ProductCard({ product, newImage }) {
+  const { setCartItems } = React.useContext(CartContext);
   return (
     <div key={product.id} className="product-element">
-      <Link to={`${product.id}`}>
+      <div>
         <div className="card-img-sector">
-          <img className="card-img" src={newImage ? newImage : image} />
-          <button className="add-cart-btn">Add to cart</button>
+          <Link to={`${product.id}`}>
+            <img className="card-img" src={newImage ? newImage : image} />
+          </Link>
+          <button
+            onClick={() =>
+              setCartItems((prevItems) => {
+                const itemInCart = prevItems.find(
+                  (item) => item.id === product.id
+                );
+                if (itemInCart) {
+                  return prevItems.map((prevItem) =>
+                    prevItem.id === product.id
+                      ? { ...prevItem, quantity: prevItem.quantity + 1 }
+                      : prevItem
+                  );
+                } else {
+                  return [...prevItems, { ...product, quantity: 1 }];
+                }
+              })
+            }
+            className="add-cart-btn"
+          >
+            Add to cart
+          </button>
         </div>
         <div className="card-content">
           <p className="card-body-categ">{product.category}</p>
@@ -17,9 +42,9 @@ export default function ProductCard({ product, newImage }) {
           {/* <div className="card-footer">
             <button className="add-cart-btn">Add to cart</button>
             <button className="view-details-btn">view details</button>
-          </div> */}
+            </div> */}
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
