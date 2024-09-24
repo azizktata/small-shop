@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductDetails.css";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 import { productss } from "../Products/Products";
-import image from "../../assets/chair2.jpg";
+import image from "../../assets/kitchen1.jpg";
 
 export default function ProductDetails() {
   const [count, setCount] = React.useState(0);

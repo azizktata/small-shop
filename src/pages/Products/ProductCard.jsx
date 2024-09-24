@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
-import image from "../../assets/chair2.jpg";
+import image from "../../assets/kitchen1.jpg";
 import { CartContext } from "../../components/HomeLayout";
 
 export default function ProductCard({ product, newImage }) {

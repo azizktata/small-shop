@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import { CartContext } from "../../components/HomeLayout";
-import image from "../../assets/chair2.jpg";
+import image from "../../assets/kitchen1.jpg";
 import { productss } from "../../pages/Products/Products";
 import { Link } from "react-router-dom";
 

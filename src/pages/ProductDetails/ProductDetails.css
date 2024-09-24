@@ -48,8 +48,8 @@ p, h4 {
 
 .product-details-container {
   width: 90%;
-  margin: 0 auto;
-  margin-top: 2em;
+  margin: 2em auto;
+  margin-bottom: 5em;
 }
 .back-link {
   font-size: 1rem;
