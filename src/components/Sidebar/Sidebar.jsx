@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 import { CartContext } from "../../components/HomeLayout";
 import image from "../../assets/kitchen1.jpg";
-import { productss } from "../../pages/Products/Products";
+
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -41,7 +41,7 @@ export default function Sidebar() {
       <div className="sidebar-container">
         <div className="sidebar-header">
           <h4>
-            Cart <span>{numberOfCartItems}</span>
+            Cart <span className="price-bg">{numberOfCartItems}</span>
           </h4>
           <button
             onClick={() => {
@@ -93,9 +93,9 @@ export default function Sidebar() {
             )}
           </p>
         </div>
-        <button className="checkout-btn">
-          <Link to="/checkout">Checkout</Link>
-        </button>
+        <Link className="checkout-link" to="/checkout">
+          <button className="btn btn-primary checkout-btn">Checkout</button>
+        </Link>
       </div>
     </div>
   );

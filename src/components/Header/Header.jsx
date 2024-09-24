@@ -1,8 +1,7 @@
 import React from "react";
 import "./Header.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CartContext } from "../HomeLayout";
-import image from "../../assets/chair2.jpg";
 
 export default function Header() {
   const { cartItems } = React.useContext(CartContext);
@@ -28,6 +27,9 @@ export default function Header() {
               >
                 Shop
               </NavLink>
+            </li>
+            <li>
+              <a href="./#about">about </a>
             </li>
             <li>
               <NavLink to="login">Login</NavLink>

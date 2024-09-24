@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import kitchen1 from "../../assets/kitchen1.jpg";
-import kitchen2 from "../../assets/kitchen2.jpg";
 import { productss } from "../Products/Products";
 import ProductCard from "../Products/ProductCard";
 import { MdOutlineLocalShipping } from "react-icons/md";
@@ -35,7 +34,10 @@ export default function Home() {
         <div className={`carousel ${currentImage}`}>
           <h1 className="hero-title">Shop the Best.</h1>
           <p className="hero-content">Get the best deals on our products</p>
-          <button className="btn shop-btn primary-btn ">Shop now</button>
+          <button className="btn shop-btn primary-btn ">
+            {" "}
+            <Link to="/products">Shop now</Link>{" "}
+          </button>
         </div>
 
         <div className="categories">
@@ -96,7 +98,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="about">
+      <div id="about" className="about">
         <div className="about-container">
           <div className="about-content">
             <h3 className="about-title">About Us.</h3>
@@ -113,14 +115,15 @@ export default function Home() {
           </div>
 
           <div className="about-images">
-            <img src={kitchen1} alt="about" />
+            <img src={kitchen1} alt="about" loading="lazy" />
           </div>
         </div>
       </div>
 
-      <div className="collections">
-        <h3 className="collection-title">Discover the Kitchen collection</h3>
+      {/* <div className="collections">
+        <h3 className="collection-title">Discover the Kitchen collection.</h3>
         <div className="category collection-category">
+          <img src={image} alt="" />
           <div className="category-content">
             <button className="btn shop-btn secondary-btn">Shop now</button>
           </div>
@@ -133,9 +136,9 @@ export default function Home() {
             <ProductCard product={productss[1]} newImage={kitchen2} />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="products">
-        <h3 className="products-title">Our Products</h3>
+        <h3 className="products-title">Our Products.</h3>
         {productElements}
         <button className="btn show-btn primary-btn">
           <Link to="products">Show More</Link>

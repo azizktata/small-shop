@@ -11,10 +11,14 @@ export default function ProductCard({ product, newImage }) {
       <div>
         <div className="card-img-sector">
           <Link to={`/products/${product.id}`}>
-            <img className="card-img" src={newImage ? newImage : image} />
+            <img
+              className="card-img"
+              src={newImage ? newImage : image}
+              loading="lazy"
+            />
           </Link>
           <button
-            onClick={() =>
+            onClick={() => {
               setCartItems((prevItems) => {
                 const itemInCart = prevItems.find(
                   (item) => item.id === product.id
@@ -28,18 +32,21 @@ export default function ProductCard({ product, newImage }) {
                 } else {
                   return [...prevItems, { ...product, quantity: 1 }];
                 }
-              })
-            }
+              });
+              document
+                .querySelector(".sidebar")
+                .classList.remove("hide-sidebar");
+              document.querySelector(".sidebar").classList.add("show-sidebar");
+            }}
             className="add-cart-btn"
           >
             Add to cart
           </button>
         </div>
         <div className="card-content">
-          <div className="card-content-header">
-            <h2 className="card-title">{product.name}</h2>
-            <p className="card-body-categ">{product.category}</p>
-          </div>
+          <p className="card-body-categ">{product.category}</p>
+          <h2 className="card-title">{product.name}</h2>
+
           <p className="card-body-price">{product.price}$</p>
           {/* <div className="card-footer">
             <button className="add-cart-btn">Add to cart</button>

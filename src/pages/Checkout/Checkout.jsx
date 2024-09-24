@@ -1,9 +1,6 @@
 import React from "react";
 import "./Checkout.css";
-import image from "./work.jpg";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../components/HomeLayout";
-import { productss } from "../Products/Products";
 
 export default function Checkout() {
   const { cartItems, setCartItems } = React.useContext(CartContext);
@@ -12,7 +9,6 @@ export default function Checkout() {
     (acc, product) => acc + product.price * product.quantity,
     0
   );
-  // console.log(cartItems);
 
   return (
     <div className="checkout-main">
@@ -25,7 +21,7 @@ export default function Checkout() {
           <input placeholder="Region" type="text" className="region" />
           <input placeholder="City" type="text" className="address" />
           <input placeholder="Your Address" type="text" className="address" />
-          <button className="btn order-checkout-btn" to=".">
+          <button className="btn btn-primary order-checkout-btn" to=".">
             Complete Order
           </button>
         </form>

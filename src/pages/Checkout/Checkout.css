@@ -37,20 +37,25 @@
   border-radius: 3px;
   box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.1);
 }
+
 .order-checkout-btn {
-  padding: 0.75em 2em;
-  font-size: 1.125em;
-  border: 0;
-  background-color: #333;
-  margin-top: 1em;
+  display: inline-block;
+  padding: 1.75em 2em;
+
+  text-transform: uppercase;
+  font-weight: 700;
   color: white;
-  cursor: pointer;
-  transition: background-color 250ms ease;
+  margin-bottom: 2em;
+  background-color: #242020;
+  transition: background-color 250ms;
+  letter-spacing: 2px;
 }
-.order-checkout-btn:focus,
-.order-checkout-btn:hover {
-  background-color: black;
+.order-checkout-btn:hover,
+.order-checkout-btn:focus {
+  background-color: #4f4f4f;
+  transform: translate(1px, 1px);
 }
+
 .dt {
   color: #ccc;
   font-weight: 600;

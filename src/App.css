@@ -71,17 +71,3 @@ h3 {
   background: transparent;
   border: 1px solid #ffffff;
 }
-.order-checkout-btn {
-  padding: 0.75em 2em;
-  font-size: 0.75em;
-  border: 0;
-  background-color: #333;
-  margin-top: 1em;
-  color: white;
-
-  transition: background-color 250ms ease;
-}
-.order-checkout-btn:focus,
-.order-checkout-btn:hover {
-  background-color: black;
-}

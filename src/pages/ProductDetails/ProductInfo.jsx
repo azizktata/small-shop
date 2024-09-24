@@ -1,9 +1,11 @@
 import React from "react";
 import "./ProductDetails.css";
 import { useOutletContext } from "react-router-dom";
+import { CartContext } from "../../components/HomeLayout";
 
 export default function ProductInfo() {
   const { product, count, setCount } = useOutletContext();
+  const { setCartItems } = React.useContext(CartContext);
   return (
     <div>
       <h3 className="product-info-title">{product.name}</h3>
@@ -28,7 +30,29 @@ export default function ProductInfo() {
           <span>{count}</span>
           <button onClick={() => setCount(count + 1)}>+</button>
         </div>
-        <button className="btn add-cart">Add to cart</button>
+        <button
+          onClick={() => {
+            setCartItems((prevItems) => {
+              const itemInCart = prevItems.find(
+                (item) => item.id === product.id
+              );
+              if (itemInCart) {
+                return prevItems.map((prevItem) =>
+                  prevItem.id === product.id
+                    ? { ...prevItem, quantity: prevItem.quantity + count }
+                    : prevItem
+                );
+              } else {
+                return [...prevItems, { ...product, quantity: count }];
+              }
+            });
+            document.querySelector(".sidebar").classList.remove("hide-sidebar");
+            document.querySelector(".sidebar").classList.add("show-sidebar");
+          }}
+          className="btn add-cart"
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

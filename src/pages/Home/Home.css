@@ -143,43 +143,16 @@
 .products-title {
   grid-column: 1 / -1;
   margin-bottom: 2em;
-  /* margin-top: 0; */
+  font-size: 1.75rem;
+  line-height: 1.6;
+  font-weight: 800;
 }
 
 .show-btn {
   grid-column: 1 / -1;
   justify-self: center;
 }
-/* .product img {
-  width: 100%;
-} */
 
-/* .product {
-  min-height: 50vh;
-
-  background-image: url("../../assets/food.jpg");
-  background-color: rgba(83, 82, 82, 0.3);
-  background-size: cover;
-  background-position: center;
-
-  margin-bottom: 1em;
-  transition: background-color 0.5s;
-}
-.visible {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-
-  opacity: 0;
-}
-.visible:hover {
-  opacity: 1;
-}
-.product:hover {
-  background-color: rgba(83, 82, 82, 0.9);
-  background-blend-mode: multiply;
-} */
 .services {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 2em;
@@ -210,16 +183,18 @@
 
 .about {
   background-color: #e0dbce;
-  height: 100vh;
+  height: auto;
 }
 .about-container {
   width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
+  justify-content: space-between;
   align-items: center;
   gap: 2em;
+  height: auto;
+  padding: 3em 0;
 }
 .about-title {
   font-size: 1.75rem;
@@ -228,8 +203,8 @@
   font-weight: 800;
 }
 .about-text {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.125rem;
+  font-weight: 500;
   line-height: 1.6;
   margin-bottom: 2.75em;
   font-family: "Jast", "sans-serif";
@@ -237,12 +212,24 @@
 .about-btn {
   background-color: transparent;
   padding: 1.25em 2.5em;
+  transition: background-color 0.5s;
+}
+.about-btn:focus,
+.about-btn:hover {
+  background-color: #e1e1e1;
+}
+.about-content {
+  height: 50%;
+  width: 100%;
 }
 
 .about-images {
-  display: flex;
   width: 100%;
-  border: 1px solid red;
+}
+.about-images img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
 }
 
 /* ================
@@ -258,12 +245,12 @@
 }
 .collection-category {
   min-height: 50vh;
-  background-image: url("../../assets/kitchen-collection.jpg");
+  /* background-image: url("../../assets/kitchen-collection.jpg");
   background-color: rgba(83, 82, 82, 0.2);
   background-blend-mode: soft-light;
   /* background-position: right; */
-  background-position: center;
-  background-size: 150%;
+  /* background-position: center;
+  background-size: 150%;  */
   /* background-position: right center; */
 }
 .category-elements {
@@ -325,7 +312,7 @@
 }
 @media screen and (min-width: 768px) {
   .carousel {
-    padding-top: 4em;
+    padding-top: 10em;
   }
   .categories {
     display: grid;
@@ -348,12 +335,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5em;
+    padding-bottom: 4em;
   }
 
   .collections {
     padding: 0 4em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 8em;
   }
   .collection-title {
     grid-column: 1 / -1;
@@ -367,29 +356,28 @@
     margin-top: 0;
   }
   .about {
+    margin-top: 4rem;
     height: auto;
+    display: flex;
+    margin-bottom: 8rem;
   }
   .about-container {
     flex-direction: row;
     gap: 2em;
-    justify-content: space-between;
     align-items: center;
-    height: 100%;
-    border: 1px solid #ccc;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .about-images {
     width: 50%;
-    /* height: 100%; */
   }
   .about-images img {
-    max-height: 300px;
+    min-height: 300px;
     width: 100%;
     object-fit: cover;
   }
   .about-content {
     width: 45%;
-    /* max-height: 300px; */
   }
 }

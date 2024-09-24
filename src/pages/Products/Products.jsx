@@ -1,7 +1,6 @@
 import React from "react";
 import "./Product.css";
 
-import image from "../../assets/food.jpg";
 import ProductCard from "./ProductCard";
 
 export default function Product() {
@@ -33,12 +32,6 @@ export default function Product() {
     <div className="products-container">
       <h3>Explore our products</h3>
       <div className="filter-container">
-        {/* <div className="category-buttons">
-          <button className="category-btn">category 1</button>
-          <button className="category-btn">category 2</button>
-          <button className="category-btn">category 3</button>
-        </div> */}
-
         <div className="filter-options">
           <select onChange={handleFilterChange} className="filter-select">
             <option value="price_asc">Price, Low to High</option>
