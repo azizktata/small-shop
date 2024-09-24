@@ -23,13 +23,18 @@ export default function Header() {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "isActive" : null)}
+                to="."
+              >
+                home{" "}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => (isActive ? "isActive" : null)}
                 to="products"
               >
                 Shop
               </NavLink>
-            </li>
-            <li>
-              <a href="./#about">about </a>
             </li>
             <li>
               <NavLink to="login">Login</NavLink>
