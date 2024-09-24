@@ -148,7 +148,7 @@
   font-weight: 800;
 }
 
-.show-btn {
+.show-more {
   grid-column: 1 / -1;
   justify-self: center;
 }
@@ -310,6 +310,7 @@
   transform: scale(1.1);
   border: 0;
 }
+
 @media screen and (min-width: 768px) {
   .carousel {
     padding-top: 5em;

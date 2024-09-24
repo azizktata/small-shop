@@ -140,9 +140,9 @@ export default function Home() {
       <div className="products">
         <h3 className="products-title">Our Products.</h3>
         {productElements}
-        <button className="btn show-btn primary-btn">
-          <Link to="products">Show More</Link>
-        </button>
+        <Link className="show-more" to="products">
+          <button className="btn show-btn primary-btn">Show More</button>
+        </Link>
       </div>
     </div>
   );
