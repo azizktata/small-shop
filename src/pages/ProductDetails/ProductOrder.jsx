@@ -15,7 +15,7 @@ export default function ProductOrder() {
           <input placeholder="Region" type="text" className="region" />
           <input placeholder="City" type="text" className="address" />
           <input placeholder="Your Address" type="text" className="address" />
-          <button className=" btn order-checkout-btn" to=".">
+          <button className=" btn order-checkout2-btn" to=".">
             Purchase
           </button>
         </div>
