@@ -1,9 +1,7 @@
 import React from "react";
 import "./ProductDetails.css";
-import { useOutletContext } from "react-router-dom";
 
 export default function ProductOrder() {
-  const { product, count, setCount } = useOutletContext();
   return (
     <div className="order-container">
       <h3>Order</h3>

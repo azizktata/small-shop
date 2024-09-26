@@ -5,7 +5,7 @@ import { productss } from "../Products/Products";
 import image from "../../assets/kitchen1.jpg";
 
 export default function ProductDetails() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(1);
   const { productId } = useParams();
   const product = productss.find((p) => p.id == productId);
 
