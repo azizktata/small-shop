@@ -1,11 +1,12 @@
 import React from "react";
 import "./ProductDetails.css";
 import { useOutletContext } from "react-router-dom";
-import { CartContext } from "../../components/HomeLayout";
+import { addToCart } from "../../cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function ProductInfo() {
   const { product, count, setCount } = useOutletContext();
-  const { setCartItems } = React.useContext(CartContext);
+  const dispatch = useDispatch();
   return (
     <div>
       <h3 className="product-info-title">{product.name}</h3>
@@ -32,20 +33,7 @@ export default function ProductInfo() {
         </div>
         <button
           onClick={() => {
-            setCartItems((prevItems) => {
-              const itemInCart = prevItems.find(
-                (item) => item.id === product.id
-              );
-              if (itemInCart) {
-                return prevItems.map((prevItem) =>
-                  prevItem.id === product.id
-                    ? { ...prevItem, quantity: prevItem.quantity + count }
-                    : prevItem
-                );
-              } else {
-                return [...prevItems, { ...product, quantity: count }];
-              }
-            });
+            dispatch(addToCart({ ...product, quantity: count }));
             document.querySelector(".sidebar").classList.remove("hide-sidebar");
             document.querySelector(".sidebar").classList.add("show-sidebar");
           }}

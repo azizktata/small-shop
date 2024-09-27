@@ -1,63 +1,35 @@
 import React from "react";
 import "./Sidebar.css";
-import { CartContext } from "../../components/HomeLayout";
 import image from "../../assets/kitchen1.jpg";
-
+import { removeFromCart, addQuantity, reduceQuantity } from "../../cartSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
-  const { cartItems, setCartItems } = React.useContext(CartContext);
+  const cartState = useSelector((state) => state.cart);
+  const cartItems = cartState.items;
+  const total = cartState.total;
 
-  const numberOfCartItems = cartItems?.length || 0;
-  function addQuantity(id) {
-    setCartItems((prevItems) => {
-      return prevItems.map((prevItem) =>
-        prevItem.id === id
-          ? { ...prevItem, quantity: prevItem.quantity + 1 }
-          : prevItem
-      );
-    });
-  }
-  function reduceQuantity(id) {
-    setCartItems((prevItems) => {
-      return prevItems.map((prevItem) =>
-        prevItem.id === id
-          ? {
-              ...prevItem,
-              quantity: prevItem.quantity - 1,
-            }
-          : prevItem
-      );
-    });
-  }
+  const dispatch = useDispatch();
+  const hideSideBar = () => {
+    document.querySelector(".sidebar").classList.remove("show-sidebar");
+    document.querySelector(".sidebar").classList.add("hide-sidebar");
+  };
 
-  function removeFromCart(id) {
-    setCartItems((prevItems) => {
-      return prevItems.filter((prevItem) => prevItem.id !== id);
-    });
-  }
   return (
     <div className="sidebar">
       <div className="sidebar-container">
         <div className="sidebar-header">
           <h4>
-            Cart <span className="price-bg">{numberOfCartItems}</span>
+            Cart <span className="price-bg">{cartItems.length}</span>
           </h4>
-          <button
-            onClick={() => {
-              document
-                .querySelector(".sidebar")
-                .classList.remove("show-sidebar");
-              document.querySelector(".sidebar").classList.add("hide-sidebar");
-            }}
-            className="close-btn"
-          >
+          <button onClick={() => hideSideBar()} className="close-btn">
             &times;
           </button>
         </div>
         {cartItems &&
           cartItems.map((product) => (
-            <div className="cart-section">
+            <div key={product.id} className="cart-section">
               <img src={image} alt="" />
               <div className="cart-section-content">
                 <h5>{product.name}</h5>
@@ -67,31 +39,29 @@ export default function Sidebar() {
                 <div className="small-counter">
                   <button
                     onClick={() =>
-                      product.quantity > 1 && reduceQuantity(product.id)
+                      product.quantity > 1 &&
+                      dispatch(reduceQuantity(product.id))
                     }
                   >
                     <i className="fa-solid fa-minus"></i>
                   </button>
                   <span>{product.quantity}</span>
-                  <button onClick={() => addQuantity(product.id)}>
+                  <button onClick={() => dispatch(addQuantity(product.id))}>
                     <i className="fa-solid fa-plus"></i>
                   </button>
                 </div>
               </div>
-              <p onClick={() => removeFromCart(product.id)} className="remove">
+              <p
+                onClick={() => dispatch(removeFromCart(product.id))}
+                className="remove"
+              >
                 &times;
               </p>
             </div>
           ))}
         <div className="total-checkout">
           <p>Total: </p>
-          <p>
-            $
-            {cartItems.reduce(
-              (acc, item) => acc + item.price * item.quantity,
-              0
-            )}
-          </p>
+          <p>${total}</p>
         </div>
         <Link className="checkout-link" to="/checkout">
           <button className="btn btn-primary checkout-btn">Checkout</button>

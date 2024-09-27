@@ -1,12 +1,15 @@
 import React from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
-import { CartContext } from "../HomeLayout";
+import { useSelector } from "react-redux";
 
 export default function Header() {
-  const { cartItems } = React.useContext(CartContext);
-
-  const numberOfCartItems = cartItems.length > 0 ? cartItems.length : 0;
+  const cartState = useSelector((state) => state.cart);
+  const cartItems = cartState.items;
+  const showSideBar = () => {
+    document.querySelector(".sidebar").classList.remove("hide-sidebar");
+    document.querySelector(".sidebar").classList.add("show-sidebar");
+  };
   return (
     <header>
       <div className="container">
@@ -39,21 +42,11 @@ export default function Header() {
             <li>
               <NavLink to="login">Login</NavLink>
             </li>
-            <li
-              onClick={() => {
-                document
-                  .querySelector(".sidebar")
-                  .classList.remove("hide-sidebar");
-                document
-                  .querySelector(".sidebar")
-                  .classList.add("show-sidebar");
-              }}
-              className="cart-icon"
-            >
+            <li onClick={() => showSideBar()} className="cart-icon">
               <i className="fa-solid fa-cart-shopping"></i>
 
               <div className="bg-counter">
-                <span>{numberOfCartItems}</span>
+                <span>{cartItems.length}</span>
               </div>
             </li>
           </ul>

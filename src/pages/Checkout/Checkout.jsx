@@ -1,14 +1,11 @@
 import React from "react";
 import "./Checkout.css";
-import { CartContext } from "../../components/HomeLayout";
+import { useSelector } from "react-redux";
 
 export default function Checkout() {
-  const { cartItems, setCartItems } = React.useContext(CartContext);
-
-  const totalPrice = cartItems.reduce(
-    (acc, product) => acc + product.price * product.quantity,
-    0
-  );
+  const cartState = useSelector((state) => state.cart);
+  const cartItems = cartState.items;
+  const totalPrice = cartState.total;
 
   return (
     <div className="checkout-main">
@@ -56,8 +53,7 @@ export default function Checkout() {
           </div>
           <div className="order-pricing container-flex">
             <p>
-              {" "}
-              <strong>Total </strong>{" "}
+              <strong>Total </strong>
             </p>
             <p>
               <strong> {totalPrice}</strong>

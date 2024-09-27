@@ -22,7 +22,7 @@ export default function Product() {
       filterProducts("desc");
     }
   };
-  console.log(sortedProducts);
+  // console.log(sortedProducts);
   const productElements = sortedProducts.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
