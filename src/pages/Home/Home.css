@@ -45,15 +45,16 @@
 }
 .carousel-img {
   width: 100%;
-  background-image: url("../../assets/table.jpg");
+  background-image: url("../../assets/table.webp");
   background-size: cover;
   background-position: bottom;
   height: 70vh;
   transition: all 0.5s;
 }
+
 .carousel-img2 {
   width: 100%;
-  background-image: url("../../assets/chair1.jpg");
+  background-image: url("../../assets/chair1.webp");
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -82,13 +83,13 @@
   transition: background-color 0.5s;
 }
 .category-img {
-  background-image: url("../../assets/chair1.jpg");
+  background-image: url("../../assets/chair1.webp");
 }
 .category-img2 {
-  background-image: url("../../assets/decoration.jpg");
+  background-image: url("../../assets/decoration.webp");
 }
 .category-img3 {
-  background-image: url("../../assets/table2.jpg");
+  background-image: url("../../assets/table2.webp");
 }
 .category:hover {
   background-color: rgba(83, 82, 82, 0.4);

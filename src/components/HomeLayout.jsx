@@ -7,9 +7,7 @@ import Sidebar from "./Sidebar/Sidebar";
 export const CartContext = React.createContext();
 
 export default function HomeLayout() {
-  // const [cartItems, setCartItems] = React.useState([]);
   return (
-    // <CartContext.Provider value={{ cartItems, setCartItems }}>
     <>
       <Header />
       <Sidebar />
@@ -18,6 +16,5 @@ export default function HomeLayout() {
       </main>
       <Footer />
     </>
-    // </CartContext.Provider>
   );
 }

@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import kitchen1 from "../../assets/kitchen1.jpg";
 import { productss } from "../Products/Products";
 import ProductCard from "../Products/ProductCard";
-import { MdOutlineLocalShipping } from "react-icons/md";
-import { RiCustomerService2Line } from "react-icons/ri";
-import { LiaUserFriendsSolid } from "react-icons/lia";
 
 export default function Home() {
   const productElements = productss
@@ -35,7 +32,6 @@ export default function Home() {
           <h1 className="hero-title">Shop the Best.</h1>
           <p className="hero-content">Get the best deals on our products</p>
           <button className="btn shop-btn primary-btn ">
-            {" "}
             <Link to="/products">Shop now</Link>{" "}
           </button>
         </div>
@@ -70,7 +66,7 @@ export default function Home() {
         <div className="services">
           <div className="service">
             <div className="icon">
-              <MdOutlineLocalShipping />
+              <i class="fa-solid fa-truck"></i>
             </div>
             <div className="service-content">
               <h4 className="service-title">Free sipping</h4>
@@ -79,7 +75,7 @@ export default function Home() {
           </div>
           <div className="service">
             <div className="icon">
-              <RiCustomerService2Line />
+              <i class="fa-solid fa-headset"></i>
             </div>
             <div className="service-content">
               <h4 className="service-title">Customer service</h4>
@@ -88,7 +84,7 @@ export default function Home() {
           </div>
           <div className="service">
             <div className="icon">
-              <LiaUserFriendsSolid />
+              <i class="fa-solid fa-user-group"></i>
             </div>
             <div className="service-content">
               <h4 className="service-title">Refer a friend</h4>
