@@ -8,6 +8,7 @@
   color: #ffffff;
   line-height: 1.8;
   margin-bottom: 0;
+  text-align: center;
 }
 .hero-content {
   font-size: 1.2rem;
@@ -33,16 +34,13 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 0.5em;
-  padding-left: 1em;
+  justify-content: center;
 }
 
 .carousel > * {
-  /* margin: auto 0; */
   align-self: center;
 }
-.carousel button {
-  /* to fix; why the button is stretching on the height */
-}
+
 .carousel-img {
   width: 100%;
   background-image: url("../../assets/table.webp");
@@ -60,6 +58,41 @@
   height: 70vh;
   transition: all 0.5s;
 }
+/* .carousel {
+  width: 100%;
+
+  margin-bottom: 0.5em;
+  border: 1px solid pink;
+  display: grid;
+  grid-template: 35vh 35vh / auto auto auto;
+  align-items: center;
+}
+.carousel img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  grid-column: 1 /-1;
+  grid-row: 1 / -1;
+}
+.hero-title {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: auto;
+  text-align: center;
+}
+.hero-content {
+  justify-self: center;
+  text-align: center;
+  margin-bottom: auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+.shop-btn {
+  grid-column: 1 / -1;
+  justify-self: center;
+  grid-row: 2;
+} */
+
 .categories {
   display: flex;
   flex-direction: column;
@@ -313,9 +346,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .carousel {
+  /* .carousel {
     padding-top: 6em;
-  }
+  } */
   .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

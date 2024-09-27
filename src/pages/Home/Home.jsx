@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import kitchen1 from "../../assets/kitchen1.jpg";
+import carousel from "../../assets/table.webp";
 import { productss } from "../Products/Products";
 import ProductCard from "../Products/ProductCard";
 
@@ -29,6 +30,9 @@ export default function Home() {
     <div className="home-container">
       <div className="home-main">
         <div className={`carousel ${currentImage}`}>
+          {/* <div className="carousel"> */}
+          {/* <img  src={carousel} alt="carousel" /> */}
+
           <h1 className="hero-title">Shop the Best.</h1>
           <p className="hero-content">Get the best deals on our products</p>
           <button className="btn shop-btn primary-btn ">

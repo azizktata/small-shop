@@ -20,6 +20,7 @@ export default function ProductCard({ product, newImage }) {
               className="card-img"
               src={newImage ? newImage : image}
               loading="lazy"
+              alt="product"
             />
           </Link>
           <button
