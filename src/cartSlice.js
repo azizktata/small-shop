@@ -4,11 +4,18 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     items: [],
     total: 0,
+    user: null
 }
 const getItem = (state, id) => state.items.find(item => item.id === id);
+
  const total = (state) => {
     state.total = state.items.reduce((acc, item) => acc + item.price * item.quantity,0) || 0;
 }
+
+export const getToken = (state) => state.user.token
+export const getUser = (state) => state.user
+export const isLoggedIn = (state) => state.user ? true : false
+
 const cartSlice = createSlice({
     name:'cart',
     initialState,
@@ -36,11 +43,17 @@ const cartSlice = createSlice({
             total(state)
             
         },
+        saveUser(state, action){
+            state.user = action.payload
+        },
+        logOut(state){
+            state.user = null
+        }
  
         
     }
 })
 
-export const { addToCart, removeFromCart, addQuantity, reduceQuantity } = cartSlice.actions
+export const { addToCart, removeFromCart, addQuantity, reduceQuantity, saveUser, logOut } = cartSlice.actions
 
 export default cartSlice.reducer

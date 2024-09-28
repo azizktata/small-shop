@@ -64,7 +64,29 @@ return new Promise((resolve, reject) => {
 
 // const token =
 //     "Bearer eyJhbGciOiJIUzI1NiJ9";
-// const url = "http://localhost:8080/api/v1/products"
+const url = "http://localhost:8080/api/v1/"
+
+export async function login(loginRequest){
+    try {
+      const res = await fetch(`${url}auth/login`, {
+        method: "POST",
+        headers: {
+         
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginRequest),
+      });
+      if (!res.ok){
+        throw new Error("Invalid credentials");
+      }
+      const data = await res.json();
+      return data;
+
+    } catch(err){
+      throw new Error("An error occurred while logging in");
+    }
+}
+
 // export async function getProducts() {
 
 //   try {

@@ -11,6 +11,7 @@ import ProductOrder from "./pages/ProductDetails/ProductOrder";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Login/Register";
 import Checkout from "./pages/Checkout/Checkout";
+import AuthRequired from "./components/AuthRequired";
 
 function App() {
   return (
@@ -25,7 +26,9 @@ function App() {
             <Route index element={<ProductInfo />} />
             <Route path="order" element={<ProductOrder />} />
           </Route>
-          <Route path="checkout" element={<Checkout />} />
+          <Route element={<AuthRequired />}>
+            <Route path="checkout" element={<Checkout />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

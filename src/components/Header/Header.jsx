@@ -1,10 +1,13 @@
 import React from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { isLoggedIn, logOut } from "../../cartSlice";
 
 export default function Header() {
   const cartState = useSelector((state) => state.cart);
+  const loggedIn = cartState.user ? true : false;
+  const dispatch = useDispatch();
   const cartItems = cartState.items;
   const showSideBar = () => {
     document.querySelector(".sidebar").classList.remove("hide-sidebar");
@@ -40,7 +43,14 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="login">Login</NavLink>
+              {loggedIn ? (
+                <i
+                  onClick={() => dispatch(logOut())}
+                  class="fa-solid fa-arrow-right-from-bracket"
+                ></i>
+              ) : (
+                <NavLink to="login">Login</NavLink>
+              )}
             </li>
             <li onClick={() => showSideBar()} className="cart-icon">
               <i className="fa-solid fa-cart-shopping"></i>

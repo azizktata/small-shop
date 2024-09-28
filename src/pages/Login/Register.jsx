@@ -1,8 +1,10 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Register() {
+  const location = useLocation();
+  const direction = location.state?.recent || "../login";
   return (
     <div className="login-form-container">
       <h3>Register</h3>
@@ -20,7 +22,7 @@ export default function Register() {
       </form>
       <p>
         Already have an account?
-        <Link to="../login"> Login </Link>
+        <Link to={direction}> Login </Link>
       </p>
     </div>
   );

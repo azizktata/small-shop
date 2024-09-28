@@ -6,18 +6,49 @@ export default function Checkout() {
   const cartState = useSelector((state) => state.cart);
   const cartItems = cartState.items;
   const totalPrice = cartState.total;
+  const user = cartState.user;
 
   return (
     <div className="checkout-main">
       <div className="checkout-container">
         <h3 className="checkout-title">Checkout</h3>
         <form className="checkout-form-container">
-          <input placeholder="Your Firstname" type="text" className="name" />
-          <input placeholder="Your Lastname" type="text" className="name" />
-          <input placeholder="Phone number" type="number" className="phone" />
-          <input placeholder="Region" type="text" className="region" />
-          <input placeholder="City" type="text" className="address" />
-          <input placeholder="Your Address" type="text" className="address" />
+          <input
+            placeholder="Your Firstname"
+            value={user.firstName || ""}
+            type="text"
+            className="name"
+          />
+          <input
+            placeholder="Your Lastname"
+            value={user.lastName || ""}
+            type="text"
+            className="name"
+          />
+          <input
+            placeholder="Phone number"
+            value={user.phoneNumber || ""}
+            type="number"
+            className="phone"
+          />
+          <input
+            placeholder="Region"
+            type="text"
+            value={user.region || ""}
+            className="region"
+          />
+          <input
+            placeholder="City"
+            type="text"
+            value={user.city || ""}
+            className="address"
+          />
+          <input
+            placeholder="Your Address"
+            value={user.address || ""}
+            type="text"
+            className="address"
+          />
           <button className="btn btn-primary order-checkout-btn" to=".">
             Complete Order
           </button>

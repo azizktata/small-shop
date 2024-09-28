@@ -1,7 +1,12 @@
 import React from "react";
 import "./Sidebar.css";
 import image from "../../assets/kitchen1.jpg";
-import { removeFromCart, addQuantity, reduceQuantity } from "../../cartSlice";
+import {
+  removeFromCart,
+  addQuantity,
+  reduceQuantity,
+  isLoggedIn,
+} from "../../cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -9,6 +14,7 @@ export default function Sidebar() {
   const cartState = useSelector((state) => state.cart);
   const cartItems = cartState.items;
   const total = cartState.total;
+  // const loggedIn = cartState.user ? true : false;
 
   const dispatch = useDispatch();
   const hideSideBar = () => {
@@ -63,6 +69,7 @@ export default function Sidebar() {
           <p>Total: </p>
           <p>${total}</p>
         </div>
+
         <Link className="checkout-link" to="/checkout">
           <button className="btn btn-primary checkout-btn">Checkout</button>
         </Link>
