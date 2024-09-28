@@ -5,17 +5,23 @@ import image from "../../assets/kitchen1.jpg";
 import { addToCart } from "../../cartSlice";
 import { useDispatch } from "react-redux";
 
-export default function ProductCard({ product, newImage }) {
+export default function ProductCard({ product, newImage, prevLink }) {
   const dispatch = useDispatch();
   const showSideBar = () => {
     document.querySelector(".sidebar").classList.remove("hide-sidebar");
     document.querySelector(".sidebar").classList.add("show-sidebar");
   };
+  console.log(prevLink);
   return (
     <div key={product.id} className="product-element">
       <div>
         <div className="card-img-sector">
-          <Link to={`/products/${product.id}`}>
+          <Link
+            to={`/products/${product.id}`}
+            state={{
+              search: `?${prevLink}`,
+            }}
+          >
             <img
               className="card-img"
               src={newImage ? newImage : image}
