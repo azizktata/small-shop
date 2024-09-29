@@ -29,9 +29,9 @@ export default function Home() {
   return (
     <div className="home-container">
       <div className="home-main">
-        <div className={`carousel ${currentImage}`}>
-          {/* <div className="carousel"> */}
-          {/* <img  src={carousel} alt="carousel" /> */}
+        {/* <div className={`carousel ${currentImage}`}> */}
+        <div className="carousel">
+          <img src={carousel} alt="carousel" />
 
           <h1 className="hero-title">Shop the Best.</h1>
           <p className="hero-content">Get the best deals on our products</p>

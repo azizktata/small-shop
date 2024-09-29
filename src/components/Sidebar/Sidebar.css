@@ -94,6 +94,7 @@ Side bar section
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.3s ease;
+  color: #070707;
 }
 .small-counter span {
   padding: 0 0.5em;

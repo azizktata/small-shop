@@ -58,16 +58,16 @@ h3 {
   padding: 0.75em 1.5em;
   border-radius: 1px;
   cursor: pointer;
+  color: #202025;
 }
 
 .primary-btn {
   background: #ffffff;
-  color: #202025;
+
   border: 0;
 }
 
 .secondary-btn {
-  color: #202025;
   background: transparent;
   border: 1px solid #ffffff;
 }
