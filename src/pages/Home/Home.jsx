@@ -31,7 +31,7 @@ export default function Home() {
       <div className="home-main">
         {/* <div className={`carousel ${currentImage}`}> */}
         <div className="carousel">
-          <img src={carousel} alt="carousel" />
+          <img src={carousel} alt="carousel" loading="eager" />
 
           <h1 className="hero-title">Shop the Best.</h1>
           <p className="hero-content">Get the best deals on our products</p>
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
 
           <div className="about-images">
-            <img src={kitchen1} alt="about" loading="lazy" />
+            <img src={kitchen1} alt="about" loading="eager" />
           </div>
         </div>
       </div>

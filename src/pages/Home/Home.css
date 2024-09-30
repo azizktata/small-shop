@@ -354,6 +354,8 @@
   .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .category {
     transition: background-color 0.5s;
   }
   .category:hover {

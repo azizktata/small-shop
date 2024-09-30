@@ -19,7 +19,7 @@ export default function ProductCard({ product, newImage }) {
             <img
               className="card-img"
               src={newImage ? newImage : image}
-              loading="lazy"
+              loading="eager"
               alt="product"
             />
           </Link>
